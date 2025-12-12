@@ -4,7 +4,7 @@ function getInitials(string) {
   return `${name.charAt(0)}${surname.charAt(0)}`;
 }
 
-// snack 2
+// snack 2 & 4
 function createSlug(string) {
   return string.toLowerCase().replaceAll(" ", "-");
 }
@@ -18,8 +18,19 @@ function average(numbers) {
   return sum / numbers.length;
 }
 
+// snack 5
+function isPalindrome(string) {
+  let palindrome = false;
+  const reversed = string.split("").reverse().join("");
+  if (reversed === string) {
+    palindrome = true;
+  }
+  return palindrome;
+}
+
 module.exports = {
   getInitials,
   createSlug,
   average,
+  isPalindrome
 };
