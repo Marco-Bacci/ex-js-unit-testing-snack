@@ -33,6 +33,9 @@ function isPalindrome(string) {
 
 // snack 7
 function findPostById(posts, id) {
+  if (isNaN(id)) {
+    throw new Error(`${id} non è un id corretto`);
+  }
   return posts.find((post) => post.id === id);
 }
 

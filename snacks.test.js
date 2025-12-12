@@ -47,7 +47,15 @@ test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido
 
 // snack 7
 test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id", () => {
-  expect(findPostById(posts, 1)).toEqual({ id: 1, title: "Ciao mondo", slug: "ciao-mondo" });
-  expect(findPostById(posts, 2)).toEqual({ id: 2, title: "Ancora qui", slug: "ancora-qui" });
-  expect(findPostById(posts, 3)).toEqual({ id: 3, title: "Fine", slug: "fine" });
+  expect(findPostById(posts, 1)).toEqual({
+    id: 1,
+    title: "Ciao mondo",
+    slug: "ciao-mondo",
+  });
+  expect(findPostById(posts, 2)).toEqual({
+    id: 2,
+    title: "Ancora qui",
+    slug: "ancora-qui",
+  });
+  expect(() => findPostById(posts, "blabla")).toThrow("blabla non è un id corretto");
 });
