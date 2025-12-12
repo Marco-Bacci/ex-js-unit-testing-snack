@@ -21,8 +21,14 @@ test("La funzione createSlug sostituisce gli spazi con -.", () => {
   expect(createSlug("Questo è un test")).toBe("questo-è-un-test");
 });
 
-// snack 5 
-test("La funzione isPalindrome verifica se una stringa è un palindromo.",()=>{
-  expect(isPalindrome("osso")).toBeTruthy()
-  expect(isPalindrome("ossatura")).toBeFalsy()
-})
+// snack 5
+test("La funzione isPalindrome verifica se una stringa è un palindromo.", () => {
+  expect(isPalindrome("osso")).toBeTruthy();
+  expect(isPalindrome("ossatura")).toBeFalsy();
+});
+
+// snack 6
+test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido.", () => {
+  expect(()=>createSlug("")).toThrow("stringa non valida");
+  expect(()=>createSlug(null)).toThrow("stringa non valida");
+});

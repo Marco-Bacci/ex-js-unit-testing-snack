@@ -4,8 +4,11 @@ function getInitials(string) {
   return `${name.charAt(0)}${surname.charAt(0)}`;
 }
 
-// snack 2 & 4
+// snack 2 , 4 , 6
 function createSlug(string) {
+  if (!string) {
+    throw new Error("stringa non valida");
+  }
   return string.toLowerCase().replaceAll(" ", "-");
 }
 
@@ -32,5 +35,5 @@ module.exports = {
   getInitials,
   createSlug,
   average,
-  isPalindrome
+  isPalindrome,
 };
