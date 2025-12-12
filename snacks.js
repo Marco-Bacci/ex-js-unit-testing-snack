@@ -6,7 +6,7 @@ function getInitials(string) {
 
 // snack 2
 function createSlug(string) {
-  return string.toLowerCase();
+  return string.toLowerCase().replaceAll(" ", "-");
 }
 
 // snack 3
